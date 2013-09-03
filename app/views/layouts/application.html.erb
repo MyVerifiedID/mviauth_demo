@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Rails3 Mongoid Devise" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails3 Mongoid Devise" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "Demo Application" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Demo Application" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -13,9 +13,10 @@
     <div id="container" class="container">
       <header>
         <%= render 'layouts/navigation' %>
+        <br>
         <%= render 'layouts/messages' %>
       </header>
-      <div id="main" role="main">
+      <div id="main" role="main" style="margin:80px;">
         <%= yield %>
       </div>
       <footer>
