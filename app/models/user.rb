@@ -11,9 +11,16 @@ class User
   ## Database authenticatable
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
+  
+  field :mobile_number, :type => String, :default => ""
+  field :country, type: String, :default =>""
+  field :provider, type: String, :default => ""
+  field :uid, type: String, :default => ""
+
+
 
   validates_presence_of :email
-  validates_presence_of :encrypted_password
+  # validates_presence_of :encrypted_password
   
   ## Recoverable
   field :reset_password_token,   :type => String
@@ -46,5 +53,6 @@ class User
   index({ email: 1 }, { unique: true, background: true })
   field :name, :type => String
   validates_presence_of :name
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at, :mobile_number, :country, :provider, :uid
+  has_one :profile
 end

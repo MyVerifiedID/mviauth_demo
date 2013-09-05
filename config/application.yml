@@ -12,3 +12,6 @@ GMAIL_PASSWORD: Your_Password
 ADMIN_NAME: First User
 ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: changeme
+
+OAUTH_ID: "bb849fb06eb5ce7b427885013e9ea01020bb7feb6ac014fc851ed52e63ba5849"
+OAUTH_SECRET: "e81e46e4daf5a8128de31d43ed893129aad52e3d45c30e03ce69e8afeab0dcc4"

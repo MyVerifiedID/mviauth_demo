@@ -10,6 +10,11 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'figaro'
 gem 'mongoid'
+
+# gem "oauth2", "~> 0.8.0"
+gem "omniauth-oauth2"
+
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
