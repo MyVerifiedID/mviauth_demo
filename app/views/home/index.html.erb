@@ -1,12 +1,22 @@
+
+
+<% if session[:access_token] %>
+	<h2> User Details from MYVERIFIEDID </h2>
+			<% session[:user_info].each do |k,v| %>
+				<% if v && ["first_name", "last_name", "email", "mobile_number", "country" ].include?(k) %>
+					<b><%= k.humanize %></b> :  <%=  v %> <br/> 
+				<% end %>
+			<% end %>
+<% else %>
 <center>
 	<h2>Login with My Verified Id Demo Application</h2>
 		<%#= link_to image_tag("login.jpeg"), "http://localhost:3000/oauth/authorize?client_id=bb849fb06eb5ce7b427885013e9ea01020bb7feb6ac014fc851ed52e63ba5849&redirect_uri=http%3A%2F%2Flocalhost%3A3001&response_type=code&scope=email" %>
 
-		<%= link_to image_tag("login.jpeg"), "/auth/myverifiedid" %>
-		<%= link_to 'Sign in', new_user_session_path, :class =>"btn-lightgreen" %>
-
-		<%= current_user.inspect %>
+			<%= link_to image_tag("login.jpeg"), "/auth/myverifiedid" %>
+			<%= link_to 'Sign in', new_user_session_path, :class =>"btn-lightgreen" %>
 
 </center>
+<% end %>
+
 
 

@@ -1,7 +1,7 @@
 <!-- <div class="brand"><b>MYVERIFIEDID Demo Application</b></div> -->
 <b><%= link_to "MYVERIFIEDID Demo Application", root_path, :class => 'brand' %></b>
 
-
+<% unless session[:access_token]%>
 <div style="float:right;">
   <ul class="nav ">
 
@@ -25,4 +25,5 @@
     <% end %>
   </ul>
   </div>
+<% end %>
   

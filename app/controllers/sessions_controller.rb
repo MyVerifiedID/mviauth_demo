@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   	puts auth.inspect
   	puts "--------------------------"
   	info = auth["extra"]["raw_info"]
+    session[:user_info] = info
   	user = User.where(provider: auth["provider"], uid: auth["uid"])
   	puts "Existing user #{user.first.inspect}"
   	puts "--------------------------"
