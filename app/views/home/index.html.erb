@@ -1,7 +1,8 @@
 
 
-<% if session[:access_token] %>
+<% if session[:access_token] && session[:user_info] %>
 	<h2> User Details from MYVERIFIEDID </h2>
+			<%= session[:user_info].inspect %>
 			<% session[:user_info].each do |k,v| %>
 				<% if v && ["first_name", "last_name", "email", "mobile_number", "country" ].include?(k) %>
 					<b><%= k.humanize %></b> :  <%=  v %> <br/> 

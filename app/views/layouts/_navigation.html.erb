@@ -1,10 +1,12 @@
 <!-- <div class="brand"><b>MYVERIFIEDID Demo Application</b></div> -->
 <b><%= link_to "MYVERIFIEDID Demo Application", root_path, :class => 'brand' %></b>
 
-<% unless session[:access_token]%>
+
 <div style="float:right;">
   <ul class="nav ">
-
+  <% if session[:access_token] %>
+      <%= link_to 'Logout', logout_path %>
+  <% else %>
     <% if user_signed_in? %>
       <li>
       <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
@@ -23,7 +25,8 @@
       <%= link_to 'Sign up', new_user_registration_path %>
       </li>
     <% end %>
+  <% end %>
+
   </ul>
   </div>
-<% end %>
   

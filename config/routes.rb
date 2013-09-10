@@ -7,6 +7,8 @@ Rails3MongoidDevise::Application.routes.draw do
   devise_for :users
   resources :users
 
+  match "logout" => "sessions#destroy"
+
   match '/auth/:provider/callback' => 'sessions#create'
   match 'auth/failure', to: redirect('/')
 
