@@ -8,7 +8,7 @@ module OmniAuth
 
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
-      option :client_options, {:site => "http://localhost:3000",
+      option :client_options, {:site => "http://localhost:3001",
         :authorize_path => "/oauth/authorize"
       }
 

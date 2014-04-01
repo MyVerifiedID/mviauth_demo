@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   private
   	
   	def auth_client
-  		@oauth_client ||= OAuth2::Client.new(ENV["OAUTH_ID"], ENV["OAUTH_SECRET"], site: "http://localhost:3000")
+  		@oauth_client ||= OAuth2::Client.new(ENV["OAUTH_ID"], ENV["OAUTH_SECRET"], site: "http://localhost:3001")
   	end
 
   	def access_token

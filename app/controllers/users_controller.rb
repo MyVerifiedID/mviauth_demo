@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show
+  	puts "coming to show"
+  	puts params.inspect
+
     @user = User.find(params[:id])
   end
 
