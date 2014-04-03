@@ -21,7 +21,10 @@ class SessionsController < ApplicationController
 
   	else
   		puts "creating new user"
-      user = User.create!(name: "#{info["first_name"]} #{info["last_name"]}", country: info["country"], email: info["email"], mobile_number: info["mobile_number"], provider: auth["provider"], uid: auth["uid"] )
+      user = User.create!( name: "#{info["first_name"]} #{info["last_name"]}", country: info["country"], 
+                           email: info["email"],  mobile_number: info["mobile_number"], 
+                           provider: auth["provider"], uid: auth["uid"],
+                           password: "Test@123", password_confirmation: "Test@123" )
   		puts user.inspect
   		puts "------------------------------"
   	end
@@ -29,6 +32,9 @@ class SessionsController < ApplicationController
 	  session[:user_id] = user.id
 	  puts session[:user_id]
 	  puts "--------------"
+
+    sign_in user, :bypass => true 
+
 	  session[:access_token] = auth["credentials"]["token"]
 
     puts "session details"
